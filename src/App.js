@@ -1,5 +1,5 @@
 import './App.css';
-import { createContext, useReducer, useState } from 'react';
+import { createContext, useState } from 'react';
 import { projectReducer } from './reducers/projectReducer';
 import { Projects } from './components/projects-section/projects';
 import { useImmerReducer } from 'use-immer';

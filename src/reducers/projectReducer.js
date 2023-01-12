@@ -33,21 +33,21 @@ export const projectReducer = (draft, { type, payload }) => {
             }
         case actions.UPDATE_TASK:
             {
-                let currentProject = draft.projects.find(project => project.id == payload.projectId)
-                let currTask = currentProject.tasklist.find(task => task.id == payload.taskId)
+                let currentProject = draft.projects.find(project => project.id === payload.projectId)
+                let currTask = currentProject.tasklist.find(task => task.id === payload.taskId)
                 currTask.status = payload.status
                 return;
             }
         case actions.DELETE_PROJECT:
             {
-                let currentProject = draft.projects.find(project => project.id == payload.projectId)
+                let currentProject = draft.projects.find(project => project.id === payload.projectId)
                 draft.totalTasks -= currentProject.tasklist.length
                 draft.projects = draft.projects.filter(project => project.id !== payload.projectId)
                 return;
             }
         case actions.DELETE_TASK:
             {
-                let currentProject = draft.projects.find(project => project.id == payload.projectId)
+                let currentProject = draft.projects.find(project => project.id === payload.projectId)
                 draft.totalTasks -= 1
                 currentProject.tasklist = currentProject.tasklist.filter(task => task.id !== payload.taskId)
                 return;
